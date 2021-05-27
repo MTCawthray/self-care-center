@@ -55,11 +55,11 @@ h1{
    padding-top: 5px;
  }
 
-.header, .which-method, .receive-message {
+.header, .which-method, .receive-message, .add-message, .submit {
   color: white;
 }
 
-.receive-message {
+.receive-message, .add-message, .submit {
   background-color:#134d71;
   padding: 5px 30px;
   margin: 5px;
@@ -77,6 +77,17 @@ h1{
    width: 780px;
    height: 100px;
  }
+
+ .custom-message {
+   margin-top: -30px;
+ }
+
+.message-input {
+  padding: 10px 100px;
+  margin: 10px 5px;
+  border-width: 1px;
+  border-radius: 5px;
+}
 
 .hidden {
   display: none!important;

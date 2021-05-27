@@ -19,7 +19,17 @@
       <div class='display-box'>
         <p class='view-message-area hidden'></p>
         <img src='./assets/meditate.svg' alt='tranquil ringing bell.'>
+        <form class="custom-message hidden">
+          <input type='radio' name='rad2' value='affirmation' id='create-affirmation'>
+          <label for='create-affirmation'>Add an affirmation</label>
+          <input type='radio' name='rad2' value='mantra' id='create-mantra'>
+          <label for='create-mantra'>Add a mantra</label>
+          <br>
+          <input type='text' class='message-input' id='user-message' placeholder='Type your message here!'>
+          <input type='submit' class='submit'>
+        </form>
       </div>
+      <button class="add-message">Add Message</button>
     </main>
 
     <script type='text/javascript' src='main.js'></script>

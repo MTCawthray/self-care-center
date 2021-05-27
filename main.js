@@ -39,22 +39,53 @@ var receiveMessageButton = document.querySelector('.receive-message');
 var messageBox = document.querySelector('.display-box');
 var bellImage = document.querySelector('img');
 var viewMessage = document.querySelector('.view-message-area');
+var addMessageButton = document.querySelector('.add-message');
+var createMessageForm = document.querySelector('.custom-message');
+var addMantraSelect = document.querySelector('#create-mantra');
+var addAffirmationSelect = document.querySelector('#create-affirmation');
+var submitButton = document.querySelector('.submit');
+var textInput = document.querySelector('.message-input');
 var currentMessage = '';
 
 //--------------------/event listeners/----------------------//
 // window.addEventListener('load', )
 receiveMessageButton.addEventListener('click', displayMessage);
+addMessageButton.addEventListener('click', displayForm);
+submitButton.addEventListener('click', submitMessage);
 
 //--------------------/functions/----------------------//
-function displayMessage() {
 
+function submitMessage(e) {
+  e.preventDefault();
+  hideForm();
+  if (!addMantraSelect.checked && !addAffirmationSelect.checked) {
+    alert('You must select either Add an affirmation OR Add a mantra to be able to submit your message!');
+    displayForm();
+  } else if (addAffirmationSelect.checked) {
+    viewMessage.innerText = `${textInput.value}`;
+    affirmations.push(`${textInput.value}`);
+  } else if (addMantraSelect.checked) {
+    viewMessage.innerText = `${textInput.value}`;
+    mantras.push(`${textInput.value}`);
+  }
+}
+
+function displayMessage() {
   if (mantraSelect.checked) {
     hideImage();
+    hideForm();
     viewMessage.innerText = `${mantras[getRandomIndex(mantras)]}`;
   } else if (affirmationSelect.checked) {
     hideImage();
     viewMessage.innerText = `${affirmations[getRandomIndex(affirmations)]}`;
   }
+
+}
+
+function displayForm() {
+  hideImage();
+  viewMessage.innerText = ``;
+  createMessageForm.classList.remove('hidden');
 }
 
 function getRandomIndex(array) {
@@ -64,4 +95,7 @@ function getRandomIndex(array) {
 function hideImage() {
   bellImage.classList.add('hidden');
   viewMessage.classList.remove('hidden');
+}
+function hideForm() {
+  createMessageForm.classList.add('hidden');
 }
