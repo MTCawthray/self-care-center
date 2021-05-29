@@ -70,7 +70,7 @@ clearMessageButton.addEventListener('click', showBellImage);
 function submitMessage(e) {
   e.preventDefault();
   hideForm();
-  if (!addMantraSelect.checked && !addAffirmationSelect.checked) {
+  if (!addMantraSelect.checked && !addAffirmationSelect.checked || !textInput.value) {
     displayForm();
     textInputLabel.classList.toggle('hidden');
 
