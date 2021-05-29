@@ -55,11 +55,11 @@ h1{
    padding-top: 5px;
  }
 
-.header, .which-method, .receive-message, .add-message, .submit {
+.header, .which-method, .receive-message, .add-message, .submit, .clear-message {
   color: white;
 }
 
-.receive-message, .add-message, .submit {
+.receive-message, .add-message, .submit, .clear-message {
   background-color:#134d71;
   padding: 5px 30px;
   margin: 5px;
@@ -76,6 +76,7 @@ h1{
  .display-box {
    width: 780px;
    height: 100px;
+   padding-bottom: 20px;
  }
 
  .custom-message {
@@ -83,10 +84,16 @@ h1{
  }
 
 .message-input {
-  padding: 10px 100px;
+  width: 600px;
+  padding: 10px 10px;
   margin: 10px 5px;
   border-width: 1px;
   border-radius: 5px;
+}
+
+.input-error, .receive-error {
+  color: red;
+  text-emphasis: bold, italic;
 }
 
 .hidden {
