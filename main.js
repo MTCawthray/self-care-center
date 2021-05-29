@@ -1,4 +1,4 @@
-//--------------------/array variables/----------------------//
+//--------------------/Data Model/----------------------//
 var affirmations = [
   `I forgive myself and set myself free.`,
   `I believe I can be all that I want to be.`,
@@ -31,8 +31,8 @@ var mantras = [
   `Onward and upward.`,
   `I am the sky, the rest is weather.`
 ];
-// var newAffirmations = [];
-// var newMantras = [];
+var currentMessage = '';
+
 //--------------------/querySelectors/----------------------//
 var affirmationSelect = document.querySelector('#show-affirmation');
 var mantraSelect = document.querySelector('#show-mantra');
@@ -49,18 +49,17 @@ var textInput = document.querySelector('.message-input');
 var textInputLabel = document.querySelector('.input-error');
 var errorMessage = document.querySelector('.receive-error');
 var clearMessageButton = document.querySelector('.clear-message');
-var currentMessage = '';
 
 //--------------------/event listeners/----------------------//
 // window.addEventListener('load', )
 receiveMessageButton.addEventListener('click', displayMessage);
 addMessageButton.addEventListener('click', displayForm);
 submitButton.addEventListener('click', submitMessage);
+clearMessageButton.addEventListener('click', showBellImage);
 addMantraSelect.addEventListener('click', hideErrorMessage);
 addAffirmationSelect.addEventListener('click', hideErrorMessage);
 mantraSelect.addEventListener('click', hideErrorMessage);
 affirmationSelect.addEventListener('click', hideErrorMessage);
-clearMessageButton.addEventListener('click', showBellImage);
 
 //--------------------/functions/----------------------//
 
