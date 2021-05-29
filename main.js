@@ -31,10 +31,11 @@ var mantras = [
   `Onward and upward.`,
   `I am the sky, the rest is weather.`
 ];
-var savedAffirmations = [];
+// var newAffirmations = [];
+// var newMantras = [];
 //--------------------/querySelectors/----------------------//
-var affirmationSelect = document.querySelector('#affirmation');
-var mantraSelect = document.querySelector('#mantra');
+var affirmationSelect = document.querySelector('#show-affirmation');
+var mantraSelect = document.querySelector('#show-mantra');
 var receiveMessageButton = document.querySelector('.receive-message');
 var messageBox = document.querySelector('.display-box');
 var bellImage = document.querySelector('img');
@@ -45,6 +46,8 @@ var addMantraSelect = document.querySelector('#create-mantra');
 var addAffirmationSelect = document.querySelector('#create-affirmation');
 var submitButton = document.querySelector('.submit');
 var textInput = document.querySelector('.message-input');
+var textInputLabel = document.querySelector('.input-error');
+var errorMessage = document.querySelector('.receive-error');
 var currentMessage = '';
 
 //--------------------/event listeners/----------------------//
@@ -52,31 +55,51 @@ var currentMessage = '';
 receiveMessageButton.addEventListener('click', displayMessage);
 addMessageButton.addEventListener('click', displayForm);
 submitButton.addEventListener('click', submitMessage);
+addMantraSelect.addEventListener('click', hideErrorMessage);
+addAffirmationSelect.addEventListener('click', hideErrorMessage);
+matraSelect.addEventListener('click', hideErrorMessage);
+affirmationSelect.addEventListener('click', hideErrorMessage);
 
 //--------------------/functions/----------------------//
+//transition to the data model!
+//create helper function that checks to see if newAff/newMant string exists in the aff or mant arrays.
+//create logic statement to pass it to the correct array accordingly.
 
 function submitMessage(e) {
   e.preventDefault();
   hideForm();
   if (!addMantraSelect.checked && !addAffirmationSelect.checked) {
-    alert('You must select either Add an affirmation OR Add a mantra to be able to submit your message!');
     displayForm();
+    textInputLabel.classList.toggle('hidden');
+
   } else if (addAffirmationSelect.checked) {
+    textInputLabel.classList.add('hidden');
     viewMessage.innerText = `${textInput.value}`;
     affirmations.push(`${textInput.value}`);
+    hideErrorMessage();
+
   } else if (addMantraSelect.checked) {
+    textInputLabel.classList.add('hidden');
     viewMessage.innerText = `${textInput.value}`;
     mantras.push(`${textInput.value}`);
+    hideErrorMessage();
   }
 }
 
 function displayMessage() {
-  if (mantraSelect.checked) {
+  if (!mantraSelect.checked && !affirmationSelect.checked) {
+    hideImage();
+    hideForm()
+    errorMessage.classList.remove('hidden');
+  } else if (mantraSelect.checked) {
     hideImage();
     hideForm();
+    hideErrorMessage();
     viewMessage.innerText = `${mantras[getRandomIndex(mantras)]}`;
   } else if (affirmationSelect.checked) {
     hideImage();
+    hideForm();
+    hideErrorMessage();
     viewMessage.innerText = `${affirmations[getRandomIndex(affirmations)]}`;
   }
 
@@ -84,6 +107,7 @@ function displayMessage() {
 
 function displayForm() {
   hideImage();
+  hideErrorMessage();
   viewMessage.innerText = ``;
   createMessageForm.classList.remove('hidden');
 }
@@ -98,4 +122,10 @@ function hideImage() {
 }
 function hideForm() {
   createMessageForm.classList.add('hidden');
+}
+
+function hideErrorMessage() {
+  console.log('hide error message function')
+  textInputLabel.classList.add('hidden');
+  errorMessage.classList.add('hidden');
 }
