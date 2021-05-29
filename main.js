@@ -63,9 +63,6 @@ affirmationSelect.addEventListener('click', hideErrorMessage);
 clearMessageButton.addEventListener('click', showBellImage);
 
 //--------------------/functions/----------------------//
-//transition to the data model!
-//create helper function that checks to see if newAff/newMant string exists in the aff or mant arrays.
-//create logic statement to pass it to the correct array accordingly.
 
 function submitMessage(e) {
   e.preventDefault();
@@ -76,14 +73,16 @@ function submitMessage(e) {
 
   } else if (addAffirmationSelect.checked) {
     textInputLabel.classList.add('hidden');
-    viewMessage.innerText = `${textInput.value}`;
-    affirmations.push(`${textInput.value}`);
+    currentMessage = `${textInput.value}`;
+    viewMessage.innerText = currentMessage;
+    updateAffirmations();
     hideErrorMessage();
 
   } else if (addMantraSelect.checked) {
     textInputLabel.classList.add('hidden');
-    viewMessage.innerText = `${textInput.value}`;
-    mantras.push(`${textInput.value}`);
+    currentMessage = `${textInput.value}`;
+    viewMessage.innerText = currentMessage;
+    updateMantras();
     hideErrorMessage();
   }
 }
@@ -122,20 +121,31 @@ function hideImage() {
   bellImage.classList.add('hidden');
   viewMessage.classList.remove('hidden');
 }
+
 function hideForm() {
   createMessageForm.classList.add('hidden');
 }
 
 function hideErrorMessage() {
-  console.log('hide error message function')
   textInputLabel.classList.add('hidden');
   errorMessage.classList.add('hidden');
 }
 
 function showBellImage() {
-  console.log("clear button function")
   hideForm();
   hideErrorMessage();
   bellImage.classList.remove('hidden');
   viewMessage.classList.add('hidden');
+}
+
+function updateMantras() {
+  if (!mantras.includes(currentMessage)) {
+    mantras.push(currentMessage);
+  }
+}
+
+function updateAffirmations() {
+  if (!affirmations.includes(currentMessage)) {
+    affirmations.push(currentMessage);
+  }
 }
