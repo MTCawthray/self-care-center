@@ -76,6 +76,7 @@ h1{
  .display-box {
    width: 780px;
    height: 100px;
+   padding-bottom: 20px;
  }
 
  .custom-message {
@@ -83,10 +84,16 @@ h1{
  }
 
 .message-input {
-  padding: 10px 100px;
+  width: 600px;
+  padding: 10px 10px;
   margin: 10px 5px;
   border-width: 1px;
   border-radius: 5px;
+}
+
+.input-error, .receive-error {
+  color: red;
+  text-emphasis: bold, italic;
 }
 
 .hidden {
