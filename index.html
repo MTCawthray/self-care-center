@@ -9,16 +9,17 @@
       <h1 class='header'>✨ Self Care Center ✨</h1>
       <h2 class='which-method'>Which type of message?</h2>
       <div class='choices'>
-        <input type='radio' name='rad1' value='affirmation' id=affirmation>
-        <label for='affirmation'>affirmation</label>
-        <input type='radio' name='rad1' value='mantra' id='mantra'>
-        <label for='mantra'>mantra</label>
+        <input type='radio' name='rad1' value='affirmation' id='show-affirmation'>
+        <label for='show-affirmation'>affirmation</label>
+        <input type='radio' name='rad1' value='mantra' id='show-mantra'>
+        <label for='show-mantra'>mantra</label>
         <br>
         <button class='receive-message'>Receive Message</button>
       </div>
       <div class='display-box'>
         <p class='view-message-area hidden'></p>
         <img src='./assets/meditate.svg' alt='tranquil ringing bell.'>
+        <span class="receive-error hidden">Error! You must choose affirmation or mantra.</span>
         <form class="custom-message hidden">
           <input type='radio' name='rad2' value='affirmation' id='create-affirmation'>
           <label for='create-affirmation'>Add an affirmation</label>
@@ -27,6 +28,7 @@
           <br>
           <input type='text' class='message-input' id='user-message' placeholder='Type your message here!'>
           <input type='submit' class='submit'>
+          <label for='user-message' class='input-error hidden'>Error! You must choose affirmation or mantra.</label>
         </form>
       </div>
       <button class="add-message">Add Message</button>
