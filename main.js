@@ -34,6 +34,7 @@ var mantras = [
 var currentMessage = '';
 
 //--------------------/querySelectors/----------------------//
+
 var affirmationSelect = document.querySelector('#show-affirmation');
 var mantraSelect = document.querySelector('#show-mantra');
 var receiveMessageButton = document.querySelector('.receive-message');
@@ -51,7 +52,7 @@ var errorMessage = document.querySelector('.receive-error');
 var clearMessageButton = document.querySelector('.clear-message');
 
 //--------------------/event listeners/----------------------//
-// window.addEventListener('load', )
+
 receiveMessageButton.addEventListener('click', displayMessage);
 addMessageButton.addEventListener('click', displayForm);
 submitButton.addEventListener('click', submitMessage);
