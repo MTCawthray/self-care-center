@@ -48,6 +48,7 @@ var submitButton = document.querySelector('.submit');
 var textInput = document.querySelector('.message-input');
 var textInputLabel = document.querySelector('.input-error');
 var errorMessage = document.querySelector('.receive-error');
+var clearMessageButton = document.querySelector('.clear-message');
 var currentMessage = '';
 
 //--------------------/event listeners/----------------------//
@@ -57,8 +58,9 @@ addMessageButton.addEventListener('click', displayForm);
 submitButton.addEventListener('click', submitMessage);
 addMantraSelect.addEventListener('click', hideErrorMessage);
 addAffirmationSelect.addEventListener('click', hideErrorMessage);
-matraSelect.addEventListener('click', hideErrorMessage);
+mantraSelect.addEventListener('click', hideErrorMessage);
 affirmationSelect.addEventListener('click', hideErrorMessage);
+clearMessageButton.addEventListener('click', showBellImage);
 
 //--------------------/functions/----------------------//
 //transition to the data model!
@@ -128,4 +130,12 @@ function hideErrorMessage() {
   console.log('hide error message function')
   textInputLabel.classList.add('hidden');
   errorMessage.classList.add('hidden');
+}
+
+function showBellImage() {
+  console.log("clear button function")
+  hideForm();
+  hideErrorMessage();
+  bellImage.classList.remove('hidden');
+  viewMessage.classList.add('hidden');
 }
