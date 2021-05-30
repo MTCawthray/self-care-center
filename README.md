@@ -1,24 +1,51 @@
 # Self Care Center
-## Overview
-How can I care for myself? One way is with affirmations and mantras!
-Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
-Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+## Project Description:
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+  - In this project I designed an app that lets the user choose to see an affirmation or a mantra with the click of a button. The app also allows a user to submit their own affirmation or mantra to be displayed.
+
+  - [Access the app here.](https://mtcawthray.github.io/self-care-center/)
+
+## Functionality
+
+  - The user can select from two choices- **Affirmation** or **Mantra**.
+  - Once a selection is made the user can click on the **Receive Message** button and have an affirmation or mantra displayed dependent on their selection.
+  - When a message is displayed in the second box, a **Clear Message** button appears at the bottom of the page that will clear the message box when clicked.
+  - As an added feature, the user can now submit their own affirmation or mantra.
+  - To do this, the user first clicks the **Add Message** button at the bottom of the screen.
+  - A form appears that displays a text box to type in a new message, and two buttons to select if the message is an affirmation or a mantra.
+  - If neither selector buttons are checked, the app will ask the user to check one before submitting.
+  - The messages submitted by the user are then added to the corresponding list (either mantras or affirmations) and now can be randomly drawn upon by the **Receive Message** button.
+
+  ![Demo Gif](https://gifyu.com/image/o2jD)
+
+
+## Programing Languages Used
+
+  - JavaScript
+  - HTML5
+  - CSS
 
 ## Learning Goals
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+  - In this project, it was our aim to gain experience building an application that utilizes HTML, CSS, and JavaScript.
+  - I got practice writing HTML and CSS to match a provided comp.
+  - I was able to understand how to listen to and respond to user events.
+  - I was able to add more functionality to the app, i.e. the add message feature and the error handling feature, to further develop my unique skills.
 
-## Setup
+## Planning
 
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
+  - This project built on what we had learned in our previous project (Hang In There) while adding the challenge of writing our own HTML and CSS from scratch.
+  - This took quite a bit of re-teaching on my part to cement my understanding of the JavaScript functionality from the previous project.
+  - Conversly, it required a fair bit of pre-teaching and extra research to learn the best ways to manipulate the CSS to visually match the comp provided.
 
+## Contributors
+
+ - Mark Cawthray
+ - Claire Fields (code review)
+
+## Additional Links
+
+  - [Project Rubric](https://frontend.turing.edu/projects/module-1/self-care-center.html)
+  - [Git Repository](https://github.com/MTCawthray/self-care-center)
+  - [View Application](https://mtcawthray.github.io/self-care-center/)
