@@ -17,7 +17,7 @@
   - If neither selector buttons are checked, the app will ask the user to check one before submitting.
   - The messages submitted by the user are then added to the corresponding list (either mantras or affirmations) and now can be randomly drawn upon by the **Receive Message** button.
 
-  ![Demo Gif](https://gifyu.com/image/o2jD)
+  [![Demo Gif](https://s3.gifyu.com/images/Hnet-image8edd05425b77adde.gif)](https://gifyu.com/image/o2jD)
 
 
 ## Programing Languages Used
