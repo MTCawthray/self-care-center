@@ -38,20 +38,20 @@ function submitMessage(e) {
     textInputLabel.classList.toggle('hidden');
 
   } else if (addAffirmationSelect.checked) {
-    textInputLabel.classList.add('hidden');
     currentMessage = `${textInput.value}`;
     viewMessage.innerText = currentMessage;
     updateAffirmations();
     hideElement(textInputLabel);
     hideElement(errorMessage);
+    showElement(clearMessageButton);
 
   } else if (addMantraSelect.checked) {
-    textInputLabel.classList.add('hidden');
     currentMessage = `${textInput.value}`;
     viewMessage.innerText = currentMessage;
     updateMantras();
     hideElement(textInputLabel);
     hideElement(errorMessage);
+    showElement(clearMessageButton);
   }
 }
 
@@ -60,14 +60,13 @@ function displayMessage() {
     hideElement(bellImage);
     hideElement(createMessageForm);
     showElement(errorMessage);
-
   } else if (mantraSelect.checked) {
     showMantra();
-
+    showElement(clearMessageButton);
   } else if (affirmationSelect.checked) {
     showAffirmation();
+    showElement(clearMessageButton);
   }
-
 }
 
 function displayForm() {
@@ -75,36 +74,20 @@ function displayForm() {
   hideElement(textInputLabel);
   hideElement(errorMessage);
   showElement(viewMessage);
+  hideElement(clearMessageButton);
   viewMessage.innerText = ``;
   createMessageForm.classList.remove('hidden');
 }
-
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-
-// function hideImage() {
-//   bellImage.classList.add('hidden');
-//   viewMessage.classList.remove('hidden');
-// }
-
-// function hideForm() {
-//   createMessageForm.classList.add('hidden');
-// }
 
 function clearError() {
   if (addMantraSelect.checked || addAffirmationSelect.checked) {
     hideElement(textInputLabel);
     hideElement(errorMessage);
-
   } else if (mantraSelect.checked || affirmationSelect.checked) {
     hideElement(textInputLabel);
     hideElement(errorMessage);
     // showElement(bellImage);
 }
-  // showElement(bellImage);
-//   // textInputLabel.classList.add('hidden');
-//   // errorMessage.classList.add('hidden');
 }
 
 function showBellImage() {
@@ -113,18 +96,7 @@ function showBellImage() {
   hideElement(errorMessage);
   showElement(bellImage);
   hideElement(viewMessage);
-}
-
-function updateMantras() {
-  if (!mantras.includes(currentMessage)) {
-    mantras.push(currentMessage);
-  }
-}
-
-function updateAffirmations() {
-  if (!affirmations.includes(currentMessage)) {
-    affirmations.push(currentMessage);
-  }
+  hideElement(clearMessageButton);
 }
 
 function showMantra() {
@@ -145,10 +117,26 @@ function showAffirmation() {
   viewMessage.innerText = `${affirmations[getRandomIndex(affirmations)]}`;
 }
 
+function updateMantras() {
+  if (!mantras.includes(currentMessage)) {
+    mantras.push(currentMessage);
+  }
+}
+
+function updateAffirmations() {
+  if (!affirmations.includes(currentMessage)) {
+    affirmations.push(currentMessage);
+  }
+}
+
 function hideElement(element) {
   element.classList.add('hidden');
 }
 
 function showElement(element) {
   element.classList.remove('hidden');
+}
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
 }
